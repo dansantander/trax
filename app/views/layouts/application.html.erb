@@ -2,12 +2,26 @@
 <html>
   <head>
     <title>Traxapp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0;' ">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/180379972d.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
   </head>
+
+  <% if notice.present? %>
+    <div class="notice">
+      <p> <%= notice %> </p>
+    </div>
+  <% end %>
+
+  <% if alert.present? %>
+    <div class="alert">
+      <p> <%= alert %> </p>
+    </div>
+  <% end %>
 
   <body>
     <%= yield %>

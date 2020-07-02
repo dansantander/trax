@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_07_01_193354) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title", default: "", null: false
-    t.time "amount", null: false
+    t.integer "amount", null: false
     t.integer "musician_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

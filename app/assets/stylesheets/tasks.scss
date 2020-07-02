@@ -1,3 +1,13 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header{
+  background-color: #3979c3;
+  display: flex;
+  justify-content: space-between;
+
+  h1{
+    color: white;
+  }
+}

@@ -1,0 +1,8 @@
+<h1>Sign In</h1>
+<div>
+  <%= form_with(url: sessions_path) do |form| %>
+    <%= form.label(:username_in, "Name: ") %>
+    <%= form.text_field(:username_in) %>
+    <%= form.submit('Login') %>
+  <% end %>
+</div>

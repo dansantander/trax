@@ -1,0 +1,9 @@
+<h1>Sign Up</h1>
+<div>
+  <%= form_with(model: @user) do |form| %>
+    <%= form.label(:name, "Name: ") %>
+    <%= form.text_field(:name) %>
+
+    <%= form.submit('Login') %>
+  <% end %>
+</div>

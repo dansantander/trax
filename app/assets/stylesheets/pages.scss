@@ -1,0 +1,45 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+
+.home {
+  width: 98%;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.logo {
+  margin: auto;    
+  font-family: 'Syncopate', sans-serif;
+  font-size: 50px;
+  color: black;
+}
+
+.home-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  
+  a{text-decoration: none;}
+}
+
+#btn-signin{
+  background: #3979c3;
+  color: #f1f3f2;
+  width: 96%;
+  border-radius: 3px;
+  height: 2.6rem;
+}
+
+#btn-signup{    
+  color: #9b9c9e;
+  width: 96%;
+  border-radius: 3px;
+  height: 2.6rem;
+  margin-top: 10px;
+}
+
+

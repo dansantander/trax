@@ -1,0 +1,15 @@
+<header>
+<div>
+  <%= link_to "Menu", user_path(current_user) %>
+</div>
+ <h1>My Tasks</h1>
+ <div>
+  <%= link_to "New Task", new_task_path %>
+ </div>
+ </header>
+
+<ul>
+  <% @tasks.each do |t| %>
+    <li><%= t.title %></li>
+  <% end %>
+</ul>
