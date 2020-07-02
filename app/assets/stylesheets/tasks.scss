@@ -3,11 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 header{
-  background-color: #3979c3;
+  background-color: #3378c2;
   display: flex;
   justify-content: space-between;
 
   h1{
     color: white;
+  }
+}
+
+.subhead{
+  height: 50px;
+  border: 2px solid rgb(207, 207, 207);
+}
+
+.container {
+  padding: 10px;
+  background-color: rgb(235, 235, 235);
+
+  ul {
+    list-style-type: none;
+    width: 90%;
+    margin: 0 auto;
+
+    li {
+      height: 80px;
+      background-color: white;
+    }
   }
 }

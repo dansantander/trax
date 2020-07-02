@@ -8,4 +8,5 @@ class Task < ApplicationRecord
   validates :amount, presence: true, numericality: { only_integer: true }
 
   default_scope -> { order(created_at: :desc) }
+
 end

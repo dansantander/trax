@@ -38,3 +38,31 @@
   font-size: 14px;
   border-radius: 3px;
   }
+
+
+  .btn-bottom{
+    background-color: #5fb523;
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-inner{
+    margin: 0 auto;
+    width: 96%;
+    height: 70px;
+    border: 2px solid white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-inner h1{
+    width: 20%;
+    margin: 0 auto;
+  }
+
+  a {
+    text-decoration: none;
+  }

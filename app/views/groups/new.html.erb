@@ -1,0 +1,13 @@
+<h1>Create A Group</h1>
+<div>
+  <%= form_with(model: @group) do |form| %>
+    <%= form.label(:name, "Name: ") %>
+    <%= form.text_field :name %>
+
+    <%= form.label(:icon, "Icon: ") %>
+    <% @group.icon = "" %>
+    <%= form.text_field :icon, placeholder: "https://website.com/image.png"%>
+
+    <%= form.submit('Create') %>
+  <% end %>
+</div>
