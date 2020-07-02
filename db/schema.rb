@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_193354) do
+ActiveRecord::Schema.define(version: 2020_07_02_194341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groupings", force: :cascade do |t|
+    t.integer "task_id"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_groupings_on_group_id"
+    t.index ["task_id"], name: "index_groupings_on_task_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -25,10 +34,10 @@ ActiveRecord::Schema.define(version: 2020_07_01_193354) do
   create_table "tasks", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.integer "amount", null: false
-    t.integer "musician_id", null: false
+    t.integer "creator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["musician_id"], name: "index_tasks_on_musician_id"
+    t.index ["creator_id"], name: "index_tasks_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|
