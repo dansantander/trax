@@ -23,9 +23,9 @@
    -webkit-font-smoothing: antialiased;
  }
 
- body {
+  body {
    font-family: Lato;
- }
+  }
 
 
   header {
@@ -74,12 +74,22 @@
     background-color: rgb(226, 120, 152);
     color: #fff;
   }
-  
+
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
   .btn-bottom{
     background-color: #5fb523;
     height: 80px;
     display: flex;
     align-items: center;
+  }
+
+  .btn-bottom:hover{
+    background-color: #6cbd32;
   }
 
   .btn-inner{
@@ -103,8 +113,4 @@
     color: white;
   }
 
-  footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-  }
+

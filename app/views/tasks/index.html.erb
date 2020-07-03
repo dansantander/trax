@@ -13,29 +13,34 @@
 </header>
 
 <div class = "subhead">
-  <h2>Total time</h2>
-  <h2><%=  %></h2>
+  <p>Total time</p>
+  <h3> 30:25 </h3>
 </div>
 
 <div class = "container">
   <ul>
     <% @tasks.each do |t| %>
       <li>
-        <%= t.title %>
-        <%= t.title %>
-        <%= t.amount %>
-        <%= t.created_at.strftime('%d %b %Y') %>
+        <%= image_tag("https://placeimg.com/50/50/tech", :class => "g-icon", alt: "Profile") %>
+        <div>
+          <div class = "task-info">
+            <p><%= t.title %></p>
+            <%= t.amount %>
+          </div>
+          <small><%= t.created_at.strftime('%d %b %Y') %></small>
+        </div>
+       
       </li>
     <% end %>
   </ul>
 </div>
 
 <footer>
-
-<div class = "btn-bottom">
-  <div class = "btn-inner">
-    <h2><%= link_to "New Task", new_task_path %></h2>
-  </div>
-</div>
-
+  <%= link_to new_task_path do %>
+    <div class = "btn-bottom">
+      <div class = "btn-inner">
+        <h2> New Task </h2>
+      </div>
+    </div>
+  <% end %>
 </footer>

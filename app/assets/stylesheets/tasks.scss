@@ -3,23 +3,49 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .subhead{
+  padding: 0 5%;
   height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    color: #747d88;
+  }
 }
 
 .container {
-  height: 75vh;
-  padding: 10px;
-  background-color: rgb(235, 235, 235);
+  min-height: 80vh;
+  padding: 3px 10px;
+  background-color: rgb(245, 245, 245);
 
   ul {
     list-style-type: none;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
+    padding: 20px 0;
 
     li {
-      height: 80px;
+      height: 110px;
       background-color: white;
       box-shadow: 3px 3px 10px #e2e2e2;
+      margin-bottom: 20px;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      align-items: center;
     }
   }
+
+  .task-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    padding-bottom: 5px;
+  }
+}
+
+footer a {
+  background-color: rgba(203, 253, 161, 0.904);
 }
