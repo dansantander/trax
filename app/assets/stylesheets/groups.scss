@@ -1,3 +1,34 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.g-container {
+  background: linear-gradient(11deg, #3778c2 0%, #1d4a7c 100%);
+  min-height: 85vh;
+
+  ul {
+    list-style-type: none;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+
+    li {
+      margin: 10px 0;
+      height: 80px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.445);
+      color: rgb(221, 221, 221);
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      align-items: center;
+    }
+
+    li:last-child{
+      border: none;
+    }
+
+    .g-icon{
+      border-radius: 50%;
+
+    }
+  }
+}

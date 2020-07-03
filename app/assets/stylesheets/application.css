@@ -27,6 +27,33 @@
    font-family: Lato;
  }
 
+
+  header {
+    height: 8vh;
+    background: #3778c2;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+  }
+
+  .title{
+    margin:0 auto;
+    color: white;
+    font-size: 12px;
+  }
+
+  .burger {
+    margin:0 auto;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .search {
+    margin:0 auto;
+    color: white;
+    font-size: 1rem;
+  }
+
   .notice,
   .alert {
   margin: 1% auto auto auto;
@@ -39,7 +66,15 @@
   border-radius: 3px;
   }
 
-
+  .notice {
+    background-color: #d4f6c6;
+  }
+  
+  .alert {
+    background-color: rgb(226, 120, 152);
+    color: #fff;
+  }
+  
   .btn-bottom{
     background-color: #5fb523;
     height: 80px;
@@ -51,7 +86,7 @@
     margin: 0 auto;
     width: 96%;
     height: 70px;
-    border: 2px solid white;
+    border: 1px solid white;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -65,4 +100,11 @@
 
   a {
     text-decoration: none;
+    color: white;
+  }
+
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
   }

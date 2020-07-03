@@ -1,32 +1,35 @@
 <header>
-  <div>
-    <i class="fa fa-bars" aria-hidden="true"><%= link_to "Menu", user_path(current_user) %></i>
+  <div class = "burger">
+    <%= link_to user_path(current_user) do%>
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    <% end %>
   </div>
-  <h1>Groups</h1>
-  <div>
+  <div class = "title">
+    <h1>Groups</h1>
+  </div>
+  <div class = "search">
     <i class="fa fa-search" aria-hidden="true"></i>
   </div> 
 </header>
 
-<section class = "subhead">
-  <h2>Total time</h2>
-  <h2><%=  %></h2>
-</section>
-
-<div class = "container">
+<div class = "g-container">
   <ul>
     <% @groups.each do |g| %>
       <li>
-        <%= image_tag g.icon %>
-        <%= g.name %>
-        <%= g.created_at.strftime('%d %b %Y') %>
+        <%= image_tag g.icon, :class => "g-icon" %>
+        <div>
+        <h3><%= g.name %></h3>
+        <small>Created: <%= g.created_at.strftime('%d %b %Y') %></small>
+        </div>
       </li>
     <% end %>
   </ul>
 </div>
 
-<div class = "btn-bottom">
-  <div class = "btn-inner">
-    <h2><%= link_to "Create New", new_group_path %></h2>
+<footer>
+  <div class = "btn-bottom">
+    <div class = "btn-inner">
+      <h2><%= link_to "Create New", new_group_path %></h2>
+    </div>
   </div>
-</div>
+</footer>

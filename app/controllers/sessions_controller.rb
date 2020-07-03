@@ -6,11 +6,9 @@ class SessionsController < ApplicationController
     if (userx = User.find_by(name: params[:username_in]))
       session[:current_user_id] = userx.id
 
-      redirect_to user_path(session[:current_user_id])
+      redirect_to user_path(session[:current_user_id]), notice: 'Succesfully signed in'
     else
-      flash.notice = 'You are not registered. Please Sign up'
-      
-      render 'sessions#new'
+      redirect_to root_path, alert: 'Please Sign Up before continuing'
     end
   end
 

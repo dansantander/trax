@@ -2,22 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header{
-  background-color: #3378c2;
-  display: flex;
-  justify-content: space-between;
-
-  h1{
-    color: white;
-  }
-}
-
 .subhead{
-  height: 50px;
-  border: 2px solid rgb(207, 207, 207);
+  height: 60px;
 }
 
 .container {
+  height: 75vh;
   padding: 10px;
   background-color: rgb(235, 235, 235);
 
@@ -29,6 +19,7 @@ header{
     li {
       height: 80px;
       background-color: white;
+      box-shadow: 3px 3px 10px #e2e2e2;
     }
   }
 }
