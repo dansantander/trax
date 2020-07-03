@@ -1,13 +1,24 @@
-<h1>New Task</h1>
-<div>
+<header>
+  <div class = "burger">
+    <%= link_to tasks_path do%>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <div class = "title">
+    <h1>New Task</h1>
+  </div>
+  <div class = "search">
+  <i class="fas fa-ellipsis-v"></i>
+  </div> 
+</header>
+
+<div class = "container f">
   <%= form_with(model: @task) do |form| %>
-    <%= form.label(:title, "Title: ") %>
-    <%= form.text_field(:title) %>
-
-    <%= form.label(:amount, "Amount: ") %>
-    <%= form.text_field(:amount) %>
- 
-
-    <%= form.submit('Create') %>
+    <div class = "form-wrapper">
+      <%= form.text_field :title, placeholder: "Title" %>
+      <%= form.text_field :amount, placeholder: "Amount" %>
+    </div>
+    <%= form.submit 'Create', :class => "btn" %>
   <% end %>
 </div>
+
