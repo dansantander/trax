@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create show]
   resources :tasks, only: %i[index new create show]
   resources :sessions, only: %i[new create destroy]
-  resources :groups, only: %i[index new create update destroy]
+  resources :groups, only: %i[index new create show destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

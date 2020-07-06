@@ -7,4 +7,5 @@ class Group < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
 
   scope :alphabetical, -> { order(name: :asc) }
+
 end

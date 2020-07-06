@@ -5,14 +5,14 @@
   </div>
 
   <ul>
-    <%= link_to tasks_path do %>
+    <%= link_to tasks_path(:task => { :official => 'true' }) do %>
       <li>
           <i class="fas fa-tasks"></i>
           <p>My tasks</p>
       </li>
     <% end %>
 
-    <%= link_to tasks_path do %>
+    <%= link_to tasks_path(:task => { :official => 'false' }) do %>
       <li>
         <i class="fas fa-list-alt"></i>
         <p>Other tasks</p>

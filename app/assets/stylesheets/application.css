@@ -56,8 +56,7 @@
 
   .notice,
   .alert {
-  margin: 1% auto auto auto;
-  width: 70%;
+  margin: auto auto auto auto;
   height: 30px;
   text-align: center;
   padding: 5px;
@@ -113,4 +112,7 @@
     color: white;
   }
 
-
+  .flash {
+    top: 0;
+    z-index: 1;
+  }

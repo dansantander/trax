@@ -9,4 +9,12 @@ class Task < ApplicationRecord
 
   default_scope -> { order(created_at: :desc) }
 
+  def group
+    groups.first
+  end
+
+  def group=(group)
+    g = Group.find_by(id: group)
+    groups << g if g
+  end
 end

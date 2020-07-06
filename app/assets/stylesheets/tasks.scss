@@ -16,7 +16,7 @@
 
 .container {
   min-height: 80vh;
-  padding: 3px 10px;
+  padding: 3px 10px 100px 10px;
   background-color: rgb(245, 245, 245);
 
   ul {
@@ -35,6 +35,14 @@
       grid-template-columns: 1fr 4fr;
       align-items: center;
     }
+
+    .g-icon{
+      .icon {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
   }
 
   .task-info{
@@ -48,4 +56,7 @@
 
 footer a {
   background-color: rgba(203, 253, 161, 0.904);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

@@ -15,13 +15,17 @@
 <div class = "g-container">
   <ul>
     <% @groups.each do |g| %>
-      <li>
-        <%= image_tag g.icon, :class => "g-icon" %>
-        <div>
-          <h3><%= g.name %></h3>
-          <small>Created: <%= g.created_at.strftime('%d %b %Y') %></small>
-        </div>
-      </li>
+      <%= link_to group_path(g) do %>
+        <li>
+          <div class="g-icon">
+            <%= image_tag g.icon, :class => "icon" %>
+          </div>
+          <div>
+            <h3><%= g.name %></h3>
+            <small>Created: <%= g.created_at.strftime('%d %b %Y') %></small>
+          </div>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </div>

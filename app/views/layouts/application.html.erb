@@ -12,6 +12,8 @@
   </head>
 
   <body>
+  <main class="main">
+  <div class="flash">
     <% if notice.present? %>
       <div class="notice">
         <p> <%= notice %> </p>
@@ -23,8 +25,9 @@
         <p> <%= alert %> </p>
       </div>
     <% end %>
+  </div>
 
-    <main class="main">
+    
       <%= yield %>
     </main>
 

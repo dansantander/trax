@@ -8,7 +8,7 @@
     <h1>New Task</h1>
   </div>
   <div class = "search">
-  <i class="fas fa-ellipsis-v"></i>
+    <i class="fas fa-ellipsis-v"></i>
   </div> 
 </header>
 
@@ -17,8 +17,9 @@
     <div class = "form-wrapper">
       <%= form.text_field :title, placeholder: "Title" %>
       <%= form.text_field :amount, placeholder: "Amount" %>
+      <%= select_tag(:group, options_for_select(@group_options), {:prompt => 'Select group (optional)'})%>
+
     </div>
     <%= form.submit 'Create', :class => "btn" %>
   <% end %>
 </div>
-
