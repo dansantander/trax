@@ -1,9 +1,13 @@
 class TasksController < ApplicationController
   def index
-    #official = params.dig(:task, :official)
-    #if official
-    @tasks = Task.all
-    
+    official = params.dig(:task, :official)
+    if official
+      if params[:task][:official] == 'true'
+        @tasks = Task.all
+      else
+        @tasks = Task.external_tasks(current_user)
+      end
+    end 
   end
 
   def new

@@ -17,4 +17,13 @@ class Task < ApplicationRecord
     g = Group.find_by(id: group)
     groups << g if g
   end
+
+  def self.grouped_tasks(user)
+    includes(:groups).select { |t| t.groups.any? }
+  end
+
+  def self.external_tasks(user)
+    includes(:groups).reject { |t| t.groups.any? }
+  end
+
 end
