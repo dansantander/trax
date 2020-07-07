@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
   def index
     @groups = Group.all.alphabetical
-    puts "********* index *******"
   end
 
   def new
@@ -18,9 +17,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    puts "********* show *******"
     @group = Group.includes(:tasks).find_by(id: params[:id])
-    #@group = Group.includes(tasks: [:creator]).find_by(id: params[:id])
     #@group = Group.find_by(id: params[:id])
   end
 

@@ -3,9 +3,21 @@ class TasksController < ApplicationController
     official = params.dig(:task, :official)
     if official
       if params[:task][:official] == 'true'
-        @tasks = Task.all
+        @tasks = Task.grouped_tasks(current_user)
+        total_grouped
+        session[:official] = 'true'
       else
         @tasks = Task.external_tasks(current_user)
+        total_external
+        session[:official] = 'true'
+      end
+    else
+      if session[:official] == 'true'
+        @tasks = Task.grouped_tasks(current_user)
+        total_grouped
+      else
+        @tasks = Task.external_tasks(current_user)
+        total_external
       end
     end 
   end
@@ -39,5 +51,11 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :amount, :group)
   end
 
+  def total_grouped
+    @total = Task.select('task.id, group.id').joins(:groups).sum(:amount)
+  end
 
+  def total_external
+    @total = Task.left_outer_joins(:groupings).where(groupings: { task_id: nil }).sum(:amount)
+  end
 end
