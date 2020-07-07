@@ -1,7 +1,7 @@
 # TRAX
 >  Rails app for helping music producers keeping track of their fees for music activities.
 
-![screenshot](screenshot.png)
+![screenshot](trax.jpg)
 
 ## Table of Contents
 
@@ -23,24 +23,24 @@
   </li>
   <li>
     Profile page includes links to:
-	+ “My Tasks”.
-	+ “Other Tasks”.
-	+ “Groups”.
-	+ “Logout”.
+	- “My Tasks”.
+	- “Other Tasks”.
+	- “Groups”.
+	- “Logout”.
   </li>
   <li>
   My Tasks:
-	+ A list of all transactions that are created by a logged-in user (sorted by most recent).
+  - A list of all transactions that are created by a logged-in user (sorted by most recent).
   </li>
   <li>
   Other Tasks:
-	+ A list of all transactions that are created by a logged-in user but *not assigned to any group* (sorted by most recent).
+  - A list of all transactions that are created by a logged-in user but *not assigned to any group* (sorted by most recent).
   </li>
   <li>
   Groups:
-	+ A list of all groups is displayed in alphabetical order.
-  + Each group is clickable and opens “Group transactions” page.
-  + When user opens the “Group transactions” page a list of all transactions that belong to that group is displayed.
+	- A list of all groups is displayed in alphabetical order.
+  - Each group is clickable and opens “Group transactions” page.
+  - When user opens the “Group transactions” page a list of all transactions that belong to that group is displayed.
   </li>
 </ul>
 
