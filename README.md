@@ -17,32 +17,20 @@
 
 ## Features
 
-<ul>
-  <li> 
-    A user logs in to the app, only by typing the username.
-  </li>
-  <li>
-    Profile page includes links to:
-	- “My Tasks”.
-	- “Other Tasks”.
-	- “Groups”.
-	- “Logout”.
-  </li>
-  <li>
-  My Tasks:
-  - A list of all transactions that are created by a logged-in user (sorted by most recent).
-  </li>
-  <li>
-  Other Tasks:
-  - A list of all transactions that are created by a logged-in user but *not assigned to any group* (sorted by most recent).
-  </li>
-  <li>
-  Groups:
-	- A list of all groups is displayed in alphabetical order.
-  - Each group is clickable and opens “Group transactions” page.
-  - When user opens the “Group transactions” page a list of all transactions that belong to that group is displayed.
-  </li>
-</ul>
+  - A user logs in to the app, only by typing the username.
+  - Profile page includes links to:
+	  - “My Tasks”.
+	  - “Other Tasks”.
+	  - “Groups”.
+	  - “Logout”.
+  - My Tasks:
+    - A list of all transactions that are created by a logged-in user (sorted by most recent).
+  - Other Tasks:
+    - A list of all transactions that are created by a logged-in user but *not assigned to any group* (sorted by most recent).
+  - Groups:
+	  - A list of all groups is displayed in alphabetical order.
+    - Each group is clickable and opens “Group transactions” page.
+    - When user opens the “Group transactions” page a list of all transactions that belong to that group is displayed.
 
 ## Demo
 
@@ -63,9 +51,9 @@
 
 ## Built With
 
-- Ruby 2.6.5 <br>
-- Ruby on Rails 5.2 <br>
-- Git, Github and VScode <br>
+  - Ruby 2.6.5 <br>
+  - Ruby on Rails 5.2 <br>
+  - Git, Github and VScode <br>
 
 ## Contributing
 

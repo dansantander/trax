@@ -6,6 +6,10 @@ class Group < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
 
+  validates :icon, format: { with: /.+\.(jpe?g|png)\z/,
+  message: 'only allows jpeg, jpg or png formats.' },
+  allow_blank: true
+
   scope :alphabetical, -> { order(name: :asc) }
 
 end
