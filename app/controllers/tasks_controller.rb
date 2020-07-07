@@ -1,29 +1,31 @@
 class TasksController < ApplicationController
+  include UsersHelper
+
   def index
-    official = params.dig(:task, :official)
-    if official
-      if params[:task][:official] == 'true'
-        @tasks = Task.grouped_tasks(current_user)
+    internal = params.dig(:task, :internal)
+    if internal
+      if params[:task][:internal] == 'true'
+        @tasks = grouped_tasks(current_user)
         total_grouped
-        session[:official] = 'true'
+        cookies[:internal] = 'true'
       else
-        @tasks = Task.external_tasks(current_user)
+        @tasks = external_tasks(current_user)
         total_external
-        session[:official] = 'true'
+        cookies[:internal] = 'false'
       end
     else
-      if session[:official] == 'true'
-        @tasks = Task.grouped_tasks(current_user)
+      if cookies[:internal] == 'true'
+        @tasks = grouped_tasks(current_user)
         total_grouped
       else
-        @tasks = Task.external_tasks(current_user)
+        @tasks = external_tasks(current_user)
         total_external
       end
     end 
   end
 
   def new
-    groups_list
+    groups_selection
     @task = Task.new
   end
 
@@ -38,24 +40,42 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    groups_selection
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    groups_selection
+    @task = Task.update(task_params)
+
+    redirect_to tasks_path, notice: 'Task was successfully updated.'
+  end
+
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    redirect_to tasks_path
   end
   
   private
-
-  def groups_list
-    @group_options = Group.all.map { |g| [g.name, g.id] }
-  end
 
   def task_params
     params.require(:task).permit(:title, :amount, :group)
   end
 
+  def groups_selection
+    @groups = Group.all.map { |g| [g.name, g.id] }
+  end
+
   def total_grouped
-    @total = Task.select('task.id, group.id').joins(:groups).sum(:amount)
+    @total = current_user.tasks.select('task.id, group.id')
+    .joins(:groups).sum(:amount)
   end
 
   def total_external
-    @total = Task.left_outer_joins(:groupings).where(groupings: { task_id: nil }).sum(:amount)
+    @total = current_user.tasks.left_outer_joins(:groupings)
+    .where(groupings: { task_id: nil }).sum(:amount)
   end
 end
