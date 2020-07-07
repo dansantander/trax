@@ -1,24 +1,50 @@
 # TRAX
->  Rails app for helping musicians to track time spent on music activities.
+>  Rails app for helping music producers keeping track of their fees for music activities.
+
+![screenshot](screenshot.png)
 
 ## Table of Contents
 
 * [Features](#features)
-* [Built With](#built-with)
+* [Live Demo](#demo)
 * [Installation](#installation)
 * [Getting Started](#getting-started)
+* [Built With](#built-with)
 * [Contributing](#contributing)
 * [Acknowledgments](#acknowledgments)
-* [Author](#author)
+* [Authors](#author)
 * [License](#license)
 
 ## Features
 
 <ul>
-  <li>User model</li>
-  <li>Create and edit users</li>
-  <li>Get messages for validation errors</li>
+  <li> 
+    A user logs in to the app, only by typing the username.
+  </li>
+  <li>
+    Profile page includes links to:
+	+ “My Tasks”.
+	+ “Other Tasks”.
+	+ “Groups”.
+	+ “Logout”.
+  </li>
+  <li>
+  My Tasks:
+	+ A list of all transactions that are created by a logged-in user (sorted by most recent).
+  </li>
+  <li>
+  Other Tasks:
+	+ A list of all transactions that are created by a logged-in user but *not assigned to any group* (sorted by most recent).
+  </li>
+  <li>
+  Groups:
+	+ A list of all groups is displayed in alphabetical order.
+  + Each group is clickable and opens “Group transactions” page.
+  + When user opens the “Group transactions” page a list of all transactions that belong to that group is displayed.
+  </li>
 </ul>
+
+## Demo
 
 ## Installation
 
@@ -37,9 +63,8 @@
 
 ## Built With
 
-- Ruby 2.7 <br>
+- Ruby 2.6.5 <br>
 - Ruby on Rails 5.2 <br>
-- HTML forms, Rails form_tag and form_for
 - Git, Github and VScode <br>
 
 ## Contributing
