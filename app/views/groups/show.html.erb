@@ -12,7 +12,7 @@
   </div> 
 </header>
 
-<div class = "container">
+<div class = "container f">
   <ul>
     <% @group.tasks.each do |t| %>
       <li>
@@ -22,11 +22,11 @@
         <div>
           <div class = "task-info">
             <p><%= t.title %></p>
-            <%= t.amount %>
+            <p>$ <%= t.amount %></p>
           </div>
-          <small><%= t.created_at.strftime('%d %b %Y') %></small>
-          <small><%= @group.name unless t.groups.first.nil? %></small>
-          <small><%= t.creator.name %></small>
+          <small><%= t.created_at.strftime('%d %b %Y') %> |</small>
+          <small><%= @group.name unless t.groups.first.nil? %> |</small>
+          <small>Creator: <%= t.creator.name %></small>
         </div>
        
       </li>

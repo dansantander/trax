@@ -1,5 +1,5 @@
 # TRAX
->  Rails app for helping music producers keeping track of their fees for music activities.
+>  Rails app for helping you with keeping track of your activities and fees per activity with no complications.
 
 ![screenshot](trax.jpg)
 
@@ -39,15 +39,16 @@
   - Make sure to have [PostgreSQL](https://www.postgresql.org/) installed and configured as the database.
   - Ensure the project dependencies are installed.
   - Clone the repo locally with the command `git clone git@github.com:dansantander/trax.git`.
-  - Navigate to the project folder.
-  - run `bundle` or `bundle install`.
+  - Navigate to the project folder inside your terminal.
+  - Run `bundle` or `bundle install`.
 
 ## Getting Started
+
   - Head over to your server on localhost:3000.
   - Create a new User using the Signup form and start a session by Signing in.
-  - Create a new Post with a content.
-  - Send a Friendship Request to other Users.
-  - Accept friend request from other users inside the "Friend Requests" Tab.
+  - Create a new Group.
+  - Create a new Task with or without a group.
+  - Browse through your tasks or tasks that don't belong to any group.
 
 ## Built With
 
