@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-
   let(:test_user) { User.create(name: 'TestUser') }
 
   let(:subject) do

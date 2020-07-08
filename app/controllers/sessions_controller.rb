@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  
   def new; end
 
   def create
@@ -12,9 +11,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def show
-    
-  end
+  def show; end
 
   def destroy
     session.delete(:current_user_id)

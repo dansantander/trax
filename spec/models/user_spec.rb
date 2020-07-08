@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   let(:test_user) { User.create(name: 'TestUser') }
 
   describe 'Model' do
@@ -19,14 +18,14 @@ RSpec.describe User, type: :model do
       test_user.name = nil
       expect(test_user).to_not be_valid
     end
-    
+
     it 'is not valid with name under minimum length' do
       test_user.name = 'te'
       expect(test_user).to_not be_valid
     end
 
     it 'is not valid with name over maximum length' do
-      test_user.name = 'te'*10
+      test_user.name = 'te' * 10
       expect(test_user).to_not be_valid
     end
   end
@@ -35,6 +34,4 @@ RSpec.describe User, type: :model do
     it { should have_many(:tasks) }
     it { should have_many(:groups) }
   end
-
-
 end

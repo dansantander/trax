@@ -18,14 +18,13 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.includes(:tasks).find_by(id: params[:id])
-    #@group = Group.find_by(id: params[:id])
+    # @group = Group.find_by(id: params[:id])
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
-  
+
   def group_params
     params.require(:group).permit(:name, :icon)
   end

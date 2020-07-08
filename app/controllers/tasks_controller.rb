@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
   include UsersHelper
 
+  before_action :require_login, only: %i[index new create]
+  
   def index
     internal = params.dig(:task, :internal)
     if internal
@@ -21,7 +23,7 @@ class TasksController < ApplicationController
         @tasks = external_tasks(current_user)
         total_external
       end
-    end 
+    end
   end
 
   def new
@@ -58,7 +60,7 @@ class TasksController < ApplicationController
 
     redirect_to tasks_path
   end
-  
+
   private
 
   def task_params
@@ -71,11 +73,11 @@ class TasksController < ApplicationController
 
   def total_grouped
     @total = current_user.tasks.select('task.id, group.id')
-    .joins(:groups).sum(:amount)
+      .joins(:groups).sum(:amount)
   end
 
   def total_external
     @total = current_user.tasks.left_outer_joins(:groupings)
-    .where(groupings: { task_id: nil }).sum(:amount)
+      .where(groupings: { task_id: nil }).sum(:amount)
   end
 end
