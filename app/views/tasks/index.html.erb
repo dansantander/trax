@@ -35,7 +35,9 @@
                 <small><%= t.groups.first.name unless t.groups.first.nil? %></small>
               </div>
               <div class="btns">
-
+                <div class = "edit-btn">
+                  <small><%= link_to "Edit", edit_task_path(t) %></small>
+                </div>
                 <div class = "del-btn">
                   <small><%= link_to "Delete", task_path(t), method: :delete,
                   data: { confirm: 'Are you sure?' } %></small>

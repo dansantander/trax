@@ -46,8 +46,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    groups_selection
-    @task = Task.update(task_params)
+    @task = Task.find(params[:id])
+    @task.update(task_params)
 
     redirect_to tasks_path, notice: 'Task was successfully updated.'
   end

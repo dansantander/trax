@@ -17,9 +17,8 @@
     <div class = "form-wrapper">
       <%= form.text_field :title, placeholder: "Title" %>
       <%= form.text_field :amount, placeholder: "Amount" %>
-      <%= select_tag(:group, options_for_select(@groups), {:prompt => 'Select group (optional)'})%>
-
+      
     </div>
-    <%= form.submit 'Edit', :class => "btn" %>
+    <%= form.submit 'Update', :class => "btn" %>
   <% end %>
 </div>

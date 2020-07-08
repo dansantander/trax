@@ -34,6 +34,8 @@
 
 ## Demo
 
+  - https://blooming-tor-45743.herokuapp.com/
+
 ## Installation
 
   - Make sure to have [PostgreSQL](https://www.postgresql.org/) installed and configured as the database.
