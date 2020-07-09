@@ -12,23 +12,14 @@
   </div> 
 </header>
 
-<ul class="error_list">
-  <% @group.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-  <% end %>
-</ul>
-
 <div class = "container f">
-    <%= form_with(model: @group) do |form| %>
+  <%= form_with(model: @group, local: true) do |form| %>
+    <div class = "container f">
       <div class = "form-wrapper">
         <%= form.text_field :name, placeholder: "Name", :class => "field" %>
-
-      
-
-        <%= form.label :avatar, 'Choose a Profile Photo' %>
-        <%= form.file_field(:avatar) %> <br><br>
+        <%= form.file_field :avatar, :class => "upload" %>
       </div>
 
       <%= form.submit 'Create', :class => "btn" %>
-    <% end %>
+  <% end %>
 </div>

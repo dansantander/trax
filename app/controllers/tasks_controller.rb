@@ -22,22 +22,21 @@ class TasksController < ApplicationController
       @tasks = external_tasks(current_user)
       total_external
     end
-  
   end
 
   def new
-    groups_selection
     @task = Task.new
   end
 
   def create
-    @task = current_user.tasks.new(task_params)
+    @task = current_user.tasks.build(task_params)
     @task.group = params[:group]
 
     if @task.save
       redirect_to tasks_path, notice: 'Task was successfully created.'
     else
-      render :new, alert: 'Task was not created.'
+      flash.now[:alert] = "Error: #{@task.errors.full_messages.join(', ')}"
+      render :new
     end
   end
 
