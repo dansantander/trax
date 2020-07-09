@@ -23,9 +23,10 @@
       <div class = "form-wrapper">
         <%= form.text_field :name, placeholder: "Name", :class => "field" %>
 
-        <% @group.icon = "" %>
+      
 
-        <%= form.text_field :icon, placeholder: "https://website.com/image.png", :class => "field" %>
+        <%= form.label :avatar, 'Choose a Profile Photo' %>
+        <%= form.file_field(:avatar) %> <br><br>
       </div>
 
       <%= form.submit 'Create', :class => "btn" %>

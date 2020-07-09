@@ -18,7 +18,9 @@
       <%= link_to group_path(g) do %>
         <li>
           <div class="g-icon">
-            <%= image_tag g.icon, :class => "icon" %>
+            <% if g.avatar.thumb.url %>
+              <%= image_tag g.avatar.thumb.url, :class => "icon" %>
+            <% end %>
           </div>
           <div>
             <h3><%= g.name %></h3>

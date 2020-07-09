@@ -9,6 +9,8 @@ class GroupsController < ApplicationController
 
   def create
     @group = current_user.groups.new(group_params)
+
+    puts "***** #{@group.avatar} *****"
     if @group.save
       redirect_to groups_path
     else
@@ -17,8 +19,15 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(:tasks).find_by(id: params[:id])
-    # @group = Group.find_by(id: params[:id])
+    #@total = current_user.tasks.select('task.id, group.id')
+    #.joins(:groups).sum(:amount)
+
+    #@join = Task.joins(:groupings).joins(:groups)
+    #@join = Task.joins(:groupings).where('groupings.group_id = ?', 1)
+    @group = Group.includes(tasks: [:creator]).find_by(id: params[:id])
+    #@group = current_user.groups.groupings.includes(:tasks)
+    @tasks = current_user.tasks.includes(:groups)
+    Task.select('tasks.*').joins(:groups)
   end
 
   def destroy; end
@@ -26,6 +35,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :avatar)
   end
 end

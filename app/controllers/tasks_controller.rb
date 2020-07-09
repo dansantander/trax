@@ -22,6 +22,7 @@ class TasksController < ApplicationController
       @tasks = external_tasks(current_user)
       total_external
     end
+  
   end
 
   def new
@@ -70,7 +71,7 @@ class TasksController < ApplicationController
   end
 
   def total_grouped
-    @total = current_user.tasks.select('task.id, group.id')
+    @total = current_user.tasks.select('task.Taskid, group.id')
       .joins(:groups).sum(:amount)
   end
 
