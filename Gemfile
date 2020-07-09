@@ -29,7 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'table_print'
 
 gem 'carrierwave'
+
 gem 'cloudinary'
+
 gem 'figaro'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -12,13 +12,12 @@
   </div> 
 </header>
 
-
 <div class = "container f">
   <ul>
     <% @group.tasks.each do |t| %>
       <li>
         <div class="g-icon">
-          <%= image_tag(t.groups.first.icon, :class => "icon" , alt: "Profile") unless t.groups.first.nil? %>
+          <%= image_tag(t.groups.first.avatar.url, :class => "icon") unless t.groups.first.nil? %>
         </div>
         <div>
           <div class = "task-info">
