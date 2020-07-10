@@ -3,6 +3,7 @@ module TasksHelper
     if internal
       if params[:task][:internal] == 'true'
         @tasks = current_user.grouped_tasks
+        total_grouped
         cookies[:internal] = 'true'
       else
         @tasks = current_user.external_tasks
@@ -18,4 +19,5 @@ module TasksHelper
     end
     @tasks
   end
+  
 end
