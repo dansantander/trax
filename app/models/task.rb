@@ -17,5 +17,4 @@ class Task < ApplicationRecord
     gr = Group.find_by(id: group)
     groups << gr if gr
   end
-
 end

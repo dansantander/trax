@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :require_login, only: %i[index new create]
-  
+
   def index
     @groups = Group.all.alphabetical
   end

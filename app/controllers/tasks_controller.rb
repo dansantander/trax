@@ -1,27 +1,10 @@
 class TasksController < ApplicationController
-  include UsersHelper
-
+  include TasksHelper
   before_action :require_login, only: %i[index new create]
 
   def index
     internal = params.dig(:task, :internal)
-    if internal
-      if params[:task][:internal] == 'true'
-        @tasks = grouped_tasks(current_user)
-        total_grouped
-        cookies[:internal] = 'true'
-      else
-        @tasks = external_tasks(current_user)
-        total_external
-        cookies[:internal] = 'false'
-      end
-    elsif cookies[:internal] == 'true'
-      @tasks = grouped_tasks(current_user)
-      total_grouped
-    else
-      @tasks = external_tasks(current_user)
-      total_external
-    end
+    task_list(internal)
   end
 
   def new
