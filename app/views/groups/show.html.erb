@@ -13,23 +13,21 @@
 </header>
 
 <div class = "container f">
-  <ul>
+  <ul>     
     <% @group.tasks.each do |t| %>
-      <li>
-        <div class="g-icon">
-          <%= image_tag(t.groups.first.avatar.url, :class => "icon") unless t.groups.first.nil? %>
-        </div>
-        <div>
-          <div class = "task-info">
-            <p><%= t.title %></p>
-            <p>$ <%= t.amount %></p>
+        <li>
+          <div class="g-icon">
+            <%= image_tag(@group.avatar.url, :class => "icon") %>
           </div>
-          <small><%= t.created_at.strftime('%d %b %Y') %> |</small>
-          <small><%= @group.name unless t.groups.first.nil? %> |</small>
-          <small>Creator: <%= t.creator.name %></small>
-        </div>
-       
-      </li>
+          <div>
+            <div class = "task-info">
+              <p><%= t.title %></p>
+              <p>$ <%= t.amount %></p>
+            </div>
+            <small><%= t.created_at.strftime('%d %b %Y') %> |</small>
+            <small>Creator: <%= t.creator.name %></small>
+          </div>
+        </li>
     <% end %>
   </ul>
 </div>

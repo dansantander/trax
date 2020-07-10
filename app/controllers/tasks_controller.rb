@@ -41,7 +41,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    groups_selection
     @task = Task.find(params[:id])
   end
 
@@ -56,7 +55,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
 
-    redirect_to tasks_path
+    redirect_to tasks_path, notice: 'Task was successfully deleted.'
   end
 
   private
@@ -65,12 +64,8 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :amount, :group)
   end
 
-  def groups_selection
-    @groups = Group.all.map { |g| [g.name, g.id] }
-  end
-
   def total_grouped
-    @total = current_user.tasks.select('task.Taskid, group.id')
+    @total = current_user.tasks.select('task.id, group.id')
       .joins(:groups).sum(:amount)
   end
 

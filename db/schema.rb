@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_220758) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.string "icon", default: "https://placeimg.com/50/50/tech"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
