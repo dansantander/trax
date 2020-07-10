@@ -87,6 +87,12 @@
     padding: 5px;
     margin: 0 5px;
   }
+
+  @media only screen and (max-width: 375px) {
+    .edit-btn {
+      display: none;
+    }
+  }
 }
 
 footer a {
@@ -95,3 +101,5 @@ footer a {
   bottom: 0;
   width: 100%;
 }
+
+
