@@ -1,0 +1,25 @@
+<header>
+  <div class = "burger">
+    <%= link_to tasks_path do%>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <div class = "title">
+    <h1>New Task</h1>
+  </div>
+  <div class = "search">
+    <i class="fas fa-ellipsis-v"></i>
+  </div> 
+</header>
+
+<div class = "container f">
+  <%= form_with(model: @task, local: true) do |form| %>
+    <div class = "form-wrapper">
+      <%= form.text_field :title, placeholder: "Title" %>
+      <%= form.text_field :amount, placeholder: "$ Amount" %>
+      <%= form.select :group, Group.all.collect { |g| [ g.name, g.id ] }, {:prompt => 'Select group (optional)'} %>
+    </div>
+    
+    <%= form.submit 'Create', :class => "btn" %>
+  <% end %>
+</div>

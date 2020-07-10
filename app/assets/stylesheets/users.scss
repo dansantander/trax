@@ -1,0 +1,71 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  background: linear-gradient(11deg, #3778c2 0%, #1d4a7c 100%);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+
+  h1 {
+    color: white;
+    margin: 10px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  ul {
+    list-style-type: none;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+
+    li {
+      margin: 10px 0;
+      height: 80px;
+      color: rgb(221, 221, 221);
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      margin: 10px;
+    }
+
+    a{
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.445);
+    }
+
+    a:hover{
+      background-color: rgba($color: #3778c2, $alpha: .5)
+    }
+
+    .last{
+      border: none;
+    }
+  }
+
+  .profile-img {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .thumbnail {
+      border-radius: 50%;
+      margin: 0 auto;
+      width: 120px;
+    }
+
+    .username {
+      margin: 10px auto;
+    }
+  }
+}

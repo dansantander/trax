@@ -1,0 +1,36 @@
+<div class = "wrapper">
+  <div class = "profile-img">
+    <%= image_tag("https://placeimg.com/100/100/tech", class: "thumbnail", alt: "Profile") %>
+    <h1 class = "username"><%= current_user.name %></h1>
+  </div>
+
+  <ul>
+    <%= link_to tasks_path(:task => { :internal => 'true' }) do %>
+      <li>
+          <i class="fas fa-tasks"></i>
+          <p>My Tasks</p>
+      </li>
+    <% end %>
+
+    <%= link_to tasks_path(:task => { :internal => 'false' }) do %>
+      <li>
+        <i class="fas fa-list-alt"></i>
+        <p>Other Tasks</p>
+      </li>
+    <% end %>
+
+    <%= link_to groups_path do %>
+      <li>
+        <i class="fas fa-object-group"></i>
+        <p>Groups</p>
+      </li>
+    <% end %>
+
+    <%= link_to signout_path, :class => "last" do %>
+      <li>
+        <i class="fas fa-sign-out-alt"></i>
+        <p>Logout</p>
+      </li>
+    <% end %>
+  </ul>
+</div>

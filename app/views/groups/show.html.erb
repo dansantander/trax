@@ -1,0 +1,33 @@
+<header>
+  <div class = "burger">
+    <%= link_to groups_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
+  <div class = "title">
+    <h1><%= @group.name %></h1>
+  </div>
+  <div class = "search">
+    <i class="fas fa-ellipsis-v"></i>
+  </div> 
+</header>
+
+<div class = "container f">
+  <ul>     
+    <% @group.tasks.each do |t| %>
+        <li>
+          <div class="g-icon">
+            <%= image_tag(@group.avatar.url, :class => "icon") %>
+          </div>
+          <div>
+            <div class = "task-info">
+              <p><%= t.title %></p>
+              <p>$ <%= t.amount %></p>
+            </div>
+            <small><%= t.created_at.strftime('%d %b %Y') %> |</small>
+            <small>Creator: <%= t.creator.name %></small>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+</div>
